@@ -1,6 +1,6 @@
 {
   "name": "koa2-swagger-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Utility to inject swagger the doc GUI into a node API",
   "main": "lib/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/johnhof/swagger-injector"
+    "url": "https://github.com/scttcper/koa2-swagger-ui"
   },
   "keywords": [
     "swagger",
@@ -18,9 +18,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/johnhof/swagger-injector/issues"
+    "url": "https://github.com/scttcper/koa2-swagger-ui/issues"
   },
-  "homepage": "https://github.com/johnhof/swagger-injector",
+  "homepage": "https://github.com/scttcper/koa2-swagger-ui",
   "devDependencies": {
     "koa": "^2.0.0-alpha.7",
     "eslint": "3.5.0",
