@@ -1,5 +1,5 @@
 # koa2-swagger-ui
-Host swagger ui at a given directory from your koa app.
+Host swagger ui at a given directory from your koa v2 app.
 
 Inspired by:
 - [swagger-injector](https://github.com/johnhof/swagger-injector) for serving on a specific route
