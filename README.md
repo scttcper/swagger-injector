@@ -32,10 +32,12 @@ const koaSwagger = require('koa2-swagger-ui');
 
 const app = new Koa();
 
-// host at /swagger instead of default /docs
+
 app.use(koaSwagger({
-  routePrefix: '/swagger',
-  url: 'http://petstore.swagger.io/v2/swagger.json' // example path to json
+  routePrefix: '/swagger', // host at /swagger instead of default /docs
+  swaggerOptions: {
+    url: 'http://petstore.swagger.io/v2/swagger.json', // example path to json
+  },
 }));
 
 app.listen(3000);
