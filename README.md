@@ -28,7 +28,7 @@ routePrefix: '/docs', // route where the view is returned
 ## example
 ```javascript
 const Koa = require('koa');
-const koaSwagger = require(koa2-swagger-ui);
+const koaSwagger = require('koa2-swagger-ui');
 
 const app = new Koa();
 
