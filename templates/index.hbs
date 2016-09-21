@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <meta name="hapi-swaggered-version" content="{{version}}">
+
+    <link rel="icon" type="image/png" href="{{routePrefix}}/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{{routePrefix}}/images/favicon-16x16.png" sizes="16x16" />
+    <link href="{{routePrefix}}/css/typography.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="{{routePrefix}}/css/reset.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="{{routePrefix}}/css/screen.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="{{routePrefix}}/css/reset.css" media="print" rel="stylesheet" type="text/css"/>
+    <link href="{{routePrefix}}/css/print.css" media="print" rel="stylesheet" type="text/css"/>
+
+    <script src="{{routePrefix}}/lib/object-assign-pollyfill.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/lib/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/lib/jquery.slideto.min.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/lib/jquery.wiggle.min.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/lib/jquery.ba-bbq.min.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/lib/handlebars-4.0.5.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/lib/lodash.min.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/lib/backbone-min.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/swagger-ui.min.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/lib/highlight.9.1.0.pack.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/lib/highlight.9.1.0.pack_extended.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/lib/jsoneditor.min.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/lib/marked.js" type="text/javascript"></script>
+    <script src="{{routePrefix}}/lib/swagger-oauth.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            var oauthOptions = {{{json oauthOptions}}};
+            var swaggerOptions = _.extend({
+                dom_id: "swagger-ui-container",
+                onComplete: function(swaggerApi, swaggerUi) {
+                    if (typeof initOAuth == "function" && oauthOptions) {
+                        initOAuth(oauthOptions);
+                    }
+
+                    {{#if authorization.defaultValue}}
+                        $('#input_apiKey').val("{{authorization.defaultValue}}");
+                        addApiKeyAuthorization();
+                    {{/if}}
+
+                    if (window.SwaggerTranslator) {
+                      window.SwaggerTranslator.translate();
+                    }
+
+                    $('pre code').each(function(i, e) {
+                        hljs.highlightBlock(e)
+                    });
+                },
+                onFailure: function(data) {
+                    log("Unable to Load SwaggerUI");
+                }
+            }, {{{json swaggerOptions}}});
+
+            if (window.SwaggerTranslator) {
+              window.SwaggerTranslator.translate();
+            }
+
+            window.swaggerUi = new SwaggerUi(swaggerOptions);
+
+            {{#if authorization}}
+                var addApiKeyAuthorization = function() {
+                    var key = $('#input_apiKey:first').val();
+
+                    if (key && key.trim() != "") {
+                        var field = '{{authorization.field}}';
+                        var scope = '{{authorization.scope}}';
+                        key = {{#if authorization.valuePrefix}}'{{authorization.valuePrefix}}' + {{/if}} key;
+                        window.swaggerUi.api.clientAuthorizations.add("api_key", new SwaggerClient.ApiKeyAuthorization(field, key, scope));
+                    } else {
+                        window.swaggerUi.api.clientAuthorizations.remove("api_key");
+                    }
+                };
+
+                $('#input_apiKey').change(addApiKeyAuthorization);
+            {{/if}}
+
+            window.swaggerUi.load();
+
+            function log() {
+                if ('console' in window) {
+                    console.log.apply(console, arguments);
+                }
+            }
+        });
+    </script>
+</head>
+<body class="swagger-section">
+<div id="header">
+    <div class="swagger-ui-wrap">
+        <a id="logo" href="#"><img class="logo__img" alt="swagger" height="30" width="30" src="{{routePrefix}}/images/logo_small.png" /><span class="logo__title">{{title}}</span></a>
+        <form id="api_selector" style="{{#if authorization}}{{else}}display: none;{{/if}}">
+            <div class="input" style="display:none;"><input placeholder="http://example.com/api" id="input_baseUrl"
+                                                            name="baseUrl" type="text"/></div>
+
+            <div class="input">
+                <input placeholder="{{#if authorization.placeholder}}{{authorization.placeholder}}{{else}}{{authorization.field}}{{/if}}"
+                       id="input_apiKey" name="apiKey" type="text"/>
+            </div>
+            <div class="input"><a id="explore" href="#">Explore</a></div>
+        </form>
+    </div>
+</div>
+
+<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+<div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+</body>
+</html>

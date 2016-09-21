@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "eslint-config-airbnb-base",
+    "eslint-config-airbnb-base/rules/strict"
+  ],
+  "rules": {
+    "no-param-reassign": 0,
+    "import/no-extraneous-dependencies": 0
+  }
+}
