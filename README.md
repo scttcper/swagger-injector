@@ -29,10 +29,13 @@ defaults:
 title: 'swagger', // page title
 oauthOptions: {}, // passed to initOAuth
 swaggerOptions: { // passed to SwaggerUi()
-  supportedSubmitMethods: ['head', 'get', 'post', 'put', 'patch', 'delete'],
-  apisSorter: 'alpha',
-  operationsSorter: 'alpha',
+  dom_id: 'swagger-ui-container',
+  url: 'http://petstore.swagger.io/v2/swagger.json', // link to swagger.json
+  supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
   docExpansion: 'none',
+  jsonEditor: false,
+  defaultModelRendering: 'schema',
+  showRequestHeaders: false,
 },
 routePrefix: '/docs', // route where the view is returned
 ```
