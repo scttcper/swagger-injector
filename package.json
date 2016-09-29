@@ -1,6 +1,6 @@
 {
   "name": "koa2-swagger-ui",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Utility to inject swagger the doc GUI into a node API",
   "main": "lib/index.js",
   "scripts": {
