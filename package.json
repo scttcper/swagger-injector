@@ -1,7 +1,7 @@
 {
   "name": "koa2-swagger-ui",
   "version": "1.0.0",
-  "description": "Utility to inject swagger the doc GUI into a node API",
+  "description": "Swagger UI middleware for koa",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha test/*.js",
@@ -15,7 +15,9 @@
     "swagger",
     "docs",
     "swagger-ui",
-    "koa"
+    "koa",
+    "koa2",
+    "middleware"
   ],
   "license": "MIT",
   "bugs": {
