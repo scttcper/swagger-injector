@@ -1,15 +1,15 @@
 # koa2-swagger-ui
 
+[![NPM version][npm-image]][npm-url]
 [![build status][travis-img]][travis-url]
 [![Dependency Status][david-img]][david-url]
-[![Dependency Status][david-dev-img]][david-dev-url]
 
+[npm-image]: https://img.shields.io/npm/v/koa2-swagger-ui.svg
+[npm-url]: https://npmjs.org/package/koa2-swagger-ui
 [travis-img]: https://img.shields.io/travis/scttcper/koa2-swagger-ui.svg?style=flat-square
 [travis-url]: https://travis-ci.org/scttcper/koa2-swagger-ui
-[david-img]: https://img.shields.io/david/dev/scttcper/koa2-swagger-ui.svg?style=flat-square
+[david-img]: https://img.shields.io/david/scttcper/koa2-swagger-ui.svg?style=flat-square
 [david-url]: https://david-dm.org/scttcper/koa2-swagger-ui
-[david-dev-img]: https://img.shields.io/david/scttcper/koa2-swagger-ui.svg?style=flat-square
-[david-dev-url]: https://david-dm.org/scttcper/koa2-swagger-ui
 
 Host swagger ui at a given directory from your koa v2 app.
 
