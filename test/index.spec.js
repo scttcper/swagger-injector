@@ -1,5 +1,8 @@
+const lint = require('mocha-eslint');
 const app = require('../examples/example');
 const request = require('supertest');
+
+lint(['lib', 'test']);
 
 describe('koa2-swagger-ui', function() {
   it('should return index file', function(done) {
