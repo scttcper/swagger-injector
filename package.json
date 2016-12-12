@@ -25,11 +25,11 @@
   },
   "homepage": "https://github.com/scttcper/koa2-swagger-ui",
   "devDependencies": {
-    "eslint": "^3.9.1",
-    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint": "^3.12.0",
+    "eslint-config-airbnb-base": "^11.0.0",
     "eslint-plugin-import": "^2.2.0",
     "koa": "^2.0.0-alpha.7",
-    "mocha": "^3.1.2",
+    "mocha": "^3.2.0",
     "mocha-eslint": "^3.0.1",
     "nodemon": "^1.11.0",
     "supertest": "^2.0.1"
@@ -38,9 +38,9 @@
     "koa": "^2.0.0-alpha.7"
   },
   "dependencies": {
-    "handlebars": "^4.0.5",
+    "handlebars": "^4.0.6",
     "koa-send": "^3.2.0",
     "lodash.defaultsdeep": "^4.6.0",
-    "swagger-ui": "^2.2.6"
+    "swagger-ui": "^2.2.8"
   }
 }
