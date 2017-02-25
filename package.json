@@ -1,12 +1,40 @@
 {
   "name": "koa2-swagger-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Swagger UI middleware for koa",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha test/*.js",
-    "start": "nodemon examples/example.js"
+    "start": "nodemon examples/example.js",
+    "coverage": "nyc npm test"
   },
+  "dependencies": {
+    "handlebars": "^4.0.6",
+    "koa-send": "^3.3.0",
+    "lodash.defaultsdeep": "^4.6.0",
+    "swagger-ui": "^2.2.10"
+  },
+  "peerDependencies": {
+    "koa": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "koa": "^2.0.1",
+    "mocha": "^3.2.0",
+    "mocha-eslint": "^3.0.1",
+    "nodemon": "^1.11.0",
+    "nyc": "^10.1.2",
+    "supertest": "^3.0.0"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },
+  "homepage": "https://github.com/scttcper/koa2-swagger-ui",
   "repository": {
     "type": "git",
     "url": "https://github.com/scttcper/koa2-swagger-ui"
@@ -22,25 +50,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/scttcper/koa2-swagger-ui/issues"
-  },
-  "homepage": "https://github.com/scttcper/koa2-swagger-ui",
-  "devDependencies": {
-    "eslint": "^3.12.0",
-    "eslint-config-airbnb-base": "^11.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "koa": "^2.0.0-alpha.7",
-    "mocha": "^3.2.0",
-    "mocha-eslint": "^3.0.1",
-    "nodemon": "^1.11.0",
-    "supertest": "^3.0.0"
-  },
-  "peerDependencies": {
-    "koa": "^2.0.0-alpha.7"
-  },
-  "dependencies": {
-    "handlebars": "^4.0.6",
-    "koa-send": "^3.2.0",
-    "lodash.defaultsdeep": "^4.6.0",
-    "swagger-ui": "^2.2.8"
   }
 }

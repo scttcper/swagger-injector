@@ -1,4 +1,9 @@
-language: node_js
 sudo: false
+language: node_js
 node_js:
+  - "7"
   - "6"
+  - "4"
+script: npm run coverage
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
