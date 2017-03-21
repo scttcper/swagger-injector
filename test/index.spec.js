@@ -15,9 +15,9 @@ describe('koa2-swagger-ui', function() {
         return done();
       });
   });
-  it('should return jquery', function(done) {
+  it('should return swagger-ui-bundle', function(done) {
     request(app.listen())
-      .get('/docs/lib/jquery-1.8.0.min.js')
+      .get('/docs/swagger-ui-bundle.js')
       .expect('Content-Type', /javascript/)
       .expect(200)
       .end((err) => {
@@ -27,7 +27,7 @@ describe('koa2-swagger-ui', function() {
   });
   it('should return favicon', function(done) {
     request(app.listen())
-      .get('/docs/images/favicon-32x32.png')
+      .get('/docs/favicon-32x32.png')
       .expect('Content-Type', /image\/png/)
       .expect(200)
       .end((err) => {

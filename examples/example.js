@@ -1,7 +1,8 @@
 const Koa = require('koa');
 const koaSwagger = require('../lib/');
 
-const app = module.exports = new Koa();
+const app = new Koa();
+module.exports = app;
 
 app.use(koaSwagger());
 

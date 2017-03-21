@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Swagger UI</title>
+  <title>{{title}}</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{routePrefix}}/swagger-ui.css" >
   <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
@@ -71,22 +71,16 @@
 <script>
 window.onload = function() {
   const options = {{{json swaggerOptions}}};
-  console.log(options)
+  options.presets = [
+    SwaggerUIBundle.presets.apis,
+    // yay ES6 modules ↘
+    Array.isArray(SwaggerUIStandalonePreset) ? SwaggerUIStandalonePreset : SwaggerUIStandalonePreset.default
+  ];
+  options.plugins = [
+    SwaggerUIBundle.plugins.DownloadUrl
+  ];
   // Build a system
-  const ui = SwaggerUIBundle({
-    url: "http://petstore.swagger.io/v2/swagger.json",
-    dom_id: '#swagger-ui',
-    presets: [
-      SwaggerUIBundle.presets.apis,
-      // yay ES6 modules ↘
-      Array.isArray(SwaggerUIStandalonePreset) ? SwaggerUIStandalonePreset : SwaggerUIStandalonePreset.default
-    ],
-    plugins: [
-      SwaggerUIBundle.plugins.DownloadUrl
-    ],
-    layout: "StandaloneLayout"
-  })
-
+  const ui = SwaggerUIBundle(options)
   window.ui = ui
 }
 </script>
