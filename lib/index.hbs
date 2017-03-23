@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>{{title}}</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{{routePrefix}}/swagger-ui.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.0.2/swagger-ui.css" integrity="sha256-C6PWUtbQZv8dd+NSpgbVglMsekL7TOAog6AyicIOp9Y=" crossorigin="anonymous" />
   <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
   <style>
@@ -66,8 +66,8 @@
 
 <div id="swagger-ui"></div>
 
-<script src="{{routePrefix}}/swagger-ui-bundle.js"> </script>
-<script src="{{routePrefix}}/swagger-ui-standalone-preset.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.0.2/swagger-ui-bundle.js" integrity="sha256-+vShenvEmvoYZSc1XBegr69KCv2WFz/qPppIMWw034g=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.0.2/swagger-ui-standalone-preset.js" integrity="sha256-1lsrRTo0lAGigECKdP50gFopD9sLO9tZs7yp/pnH0Lc=" crossorigin="anonymous"></script>
 <script>
 window.onload = function() {
   const options = {{{json swaggerOptions}}};

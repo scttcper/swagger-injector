@@ -15,24 +15,4 @@ describe('koa2-swagger-ui', function() {
         return done();
       });
   });
-  it('should return swagger-ui-bundle', function(done) {
-    request(app.listen())
-      .get('/docs/swagger-ui-bundle.js')
-      .expect('Content-Type', /javascript/)
-      .expect(200)
-      .end((err) => {
-        if (err) return done(err);
-        return done();
-      });
-  });
-  it('should return favicon', function(done) {
-    request(app.listen())
-      .get('/docs/favicon-32x32.png')
-      .expect('Content-Type', /image\/png/)
-      .expect(200)
-      .end((err) => {
-        if (err) return done(err);
-        return done();
-      });
-  });
 });
