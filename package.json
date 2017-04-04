@@ -24,7 +24,9 @@
     "mocha-eslint": "^3.0.1",
     "nodemon": "^1.11.0",
     "nyc": "^10.2.0",
-    "supertest": "^3.0.0",
+    "supertest": "^3.0.0"
+  },
+  "optionalDependencies": {
     "swagger-ui": "3.0.4"
   },
   "nyc": {

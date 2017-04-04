@@ -4,7 +4,7 @@ node_js:
   - stable
   - 7
 install: 
-  - yarn
+  - yarn install --ignore-optional
 script: 
   - npm run coverage
 after_success:
