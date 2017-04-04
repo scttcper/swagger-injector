@@ -3,6 +3,8 @@ language: node_js
 node_js:
   - stable
   - 7
+install: 
+  - yarn
 script: 
   - npm run coverage
 after_success:
