@@ -39,6 +39,8 @@ swaggerOptions: { // passed to SwaggerUi()
   jsonEditor: false,
   defaultModelRendering: 'schema',
   showRequestHeaders: false,
+  swaggerVersion: 'x.x.x' // read from package.json
+  
 },
 routePrefix: '/docs', // route where the view is returned
 ```
