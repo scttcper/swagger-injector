@@ -1,6 +1,6 @@
 {
   "name": "koa2-swagger-ui",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Swagger UI middleware for koa",
   "main": "lib/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "coverage": "nyc npm test"
   },
   "dependencies": {
-    "handlebars": "^4.0.6",
+    "handlebars": "^4.0.8",
     "lodash.defaultsdeep": "^4.6.0"
   },
   "peerDependencies": {
@@ -23,9 +23,9 @@
     "mocha": "^3.3.0",
     "mocha-eslint": "^3.0.1",
     "nodemon": "^1.11.0",
-    "nyc": "^10.2.0",
+    "nyc": "^10.3.0",
     "supertest": "^3.0.0",
-    "swagger-ui": "3.0.7"
+    "swagger-ui": "3.0.8"
   },
   "nyc": {
     "reporter": [
