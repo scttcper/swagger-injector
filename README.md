@@ -40,10 +40,10 @@ swaggerOptions: { // passed to SwaggerUi()
   defaultModelRendering: 'schema',
   showRequestHeaders: false,
   swaggerVersion: 'x.x.x' // read from package.json,
-  hideTopbar: false, // hide swagger top bar
   
 },
 routePrefix: '/docs', // route where the view is returned
+hideTopbar: false, // hide swagger top bar
 ```
 
 ## example
