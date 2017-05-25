@@ -95,7 +95,7 @@ window.onload = function() {
   const ui = SwaggerUIBundle(options)
   {{#if oauthOptions}}
   if (ui.hasOwnProperty("initOAuth")) {
-    ui.initOAuth({{{json oauthOptions}}})    
+    ui.initOAuth({{{json oauthOptions}}})
   }
   {{/if}}
   window.ui = ui
