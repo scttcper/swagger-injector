@@ -23,7 +23,7 @@
     "mocha": "^3.4.2",
     "mocha-eslint": "^3.0.1",
     "nodemon": "^1.11.0",
-    "nyc": "^10.3.2",
+    "nyc": "^11.0.1",
     "supertest": "^3.0.0",
     "swagger-ui": "3.0.12"
   },
