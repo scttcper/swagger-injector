@@ -1,6 +1,6 @@
 {
   "name": "koa2-swagger-ui",
-  "version": "2.4.6",
+  "version": "2.4.7",
   "description": "Swagger UI middleware for koa",
   "main": "lib/index.js",
   "scripts": {
@@ -20,12 +20,13 @@
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.3.0",
     "koa": "^2.2.0",
+    "koa-router": "^7.2.1",
     "mocha": "^3.4.2",
     "mocha-eslint": "^3.0.1",
     "nodemon": "^1.11.0",
     "nyc": "^11.0.2",
     "supertest": "^3.0.0",
-    "swagger-ui": "3.0.14"
+    "swagger-ui": "3.0.16"
   },
   "nyc": {
     "reporter": [
