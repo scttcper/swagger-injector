@@ -13,6 +13,12 @@ describe('koa2-swagger-ui', function() {
       .expect('Content-Type', /html/)
       .expect(200);
   });
+  it('should return index file from koa router', function() {
+    return request(app.listen())
+      .get('/moredocs')
+      .expect('Content-Type', /html/)
+      .expect(200);
+  });
   it('should return index file', function() {
     const url = `https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/${json.devDependencies['swagger-ui']}`;
     return request(url)
