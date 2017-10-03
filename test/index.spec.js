@@ -1,20 +1,18 @@
-const lint = require('mocha-eslint');
-const app = require('../examples/example');
 const request = require('supertest');
 
-lint(['lib', 'test']);
+const app = require('../examples/example');
 
 const json = require('../package.json');
 
 describe('koa2-swagger-ui', function() {
   it('should return index file', function() {
-    return request(app.listen())
+    return request(app.callback())
       .get('/docs')
       .expect('Content-Type', /html/)
       .expect(200);
   });
   it('should return index file from koa router', function() {
-    return request(app.listen())
+    return request(app.callback())
       .get('/moredocs')
       .expect('Content-Type', /html/)
       .expect(200);

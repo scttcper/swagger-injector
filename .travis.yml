@@ -8,5 +8,6 @@ before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 script:
   - npm run coverage
+  - npm run lint
 after_success:
   - bash <(curl -s https://codecov.io/bash)
