@@ -7,7 +7,7 @@
 
 [npm-image]: https://img.shields.io/npm/v/koa2-swagger-ui.svg
 [npm-url]: https://npmjs.org/package/koa2-swagger-ui
-[travis-img]: https://travis-ci.org/scttcper/koa2-swagger-ui.svg
+[travis-img]: https://api.travis-ci.org/scttcper/koa2-swagger-ui.svg?branch=master
 [travis-url]: https://travis-ci.org/scttcper/koa2-swagger-ui
 [coverage-img]: https://codecov.io/gh/scttcper/koa2-swagger-ui/branch/master/graph/badge.svg
 [coverage-url]: https://codecov.io/gh/scttcper/koa2-swagger-ui  
