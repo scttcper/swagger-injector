@@ -1,6 +1,6 @@
 {
   "name": "koa2-swagger-ui",
-  "version": "2.6.7",
+  "version": "2.6.8",
   "description": "Swagger UI middleware for koa",
   "main": "lib/index.js",
   "scripts": {
@@ -23,10 +23,10 @@
     "eslint-plugin-import": "^2.8.0",
     "koa": "^2.4.1",
     "koa-router": "^7.3.0",
-    "mocha": "^4.0.1",
+    "mocha": "^4.1.0",
     "nyc": "^11.4.1",
     "supertest": "^3.0.0",
-    "swagger-ui": "3.8.0"
+    "swagger-ui": "3.8.1"
   },
   "nyc": {
     "reporter": [
