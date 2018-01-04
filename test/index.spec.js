@@ -18,7 +18,7 @@ describe('koa2-swagger-ui', function() {
       .expect(200);
   });
   it('should return css', function() {
-    const url = `https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/${json.devDependencies['swagger-ui']}`;
+    const url = `https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/${json.devDependencies['swagger-ui-dist']}`;
     return request(url)
       .get('/swagger-ui.css')
       .expect('Content-Type', 'text/css')
