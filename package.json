@@ -1,6 +1,6 @@
 {
   "name": "koa2-swagger-ui",
-  "version": "2.6.9",
+  "version": "2.6.10",
   "description": "Swagger UI middleware for koa",
   "main": "lib/index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "mocha": "^4.1.0",
     "nyc": "^11.4.1",
     "supertest": "^3.0.0",
-    "swagger-ui-dist": "3.8.1"
+    "swagger-ui-dist": "3.9.0"
   },
   "nyc": {
     "reporter": [
