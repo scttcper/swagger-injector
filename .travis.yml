@@ -1,13 +1,11 @@
 sudo: false
 language: node_js
-node_js:
-  - 8
-before_install:
-  - npm install -g greenkeeper-lockfile
-before_script: greenkeeper-lockfile-update
-after_script: greenkeeper-lockfile-upload
+node_js: 9
 script:
-  - npm run coverage
   - npm run lint
+  - npm run coverage
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - npm run travis-deploy-once "npm run semantic-release"
+notifications:
+  email: false
