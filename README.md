@@ -3,7 +3,6 @@
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-img]][travis-url]
 [![coverage][coverage-img]][coverage-url]
-[![greenkeeper][greenkeeper-img]][greenkeeper-url]
 
 [npm-image]: https://img.shields.io/npm/v/koa2-swagger-ui.svg
 [npm-url]: https://npmjs.org/package/koa2-swagger-ui
@@ -11,8 +10,6 @@
 [travis-url]: https://travis-ci.org/scttcper/koa2-swagger-ui
 [coverage-img]: https://codecov.io/gh/scttcper/koa2-swagger-ui/branch/master/graph/badge.svg
 [coverage-url]: https://codecov.io/gh/scttcper/koa2-swagger-ui  
-[greenkeeper-img]: https://badges.greenkeeper.io/scttcper/koa2-swagger-ui.svg
-[greenkeeper-url]: https://greenkeeper.io/
 
 Host swagger ui at a given directory from your koa v2 app.
 
