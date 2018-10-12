@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/koa": "2.0.46",
     "cz-conventional-changelog": "^2.1.0",
-    "eslint": "^5.6.0",
+    "eslint": "^5.6.1",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
@@ -32,10 +32,10 @@
     "koa-router": "^7.4.0",
     "mocha": "^5.2.0",
     "nyc": "^13.0.1",
-    "semantic-release": "^15.9.16",
+    "semantic-release": "^15.9.17",
     "supertest": "^3.3.0",
-    "swagger-ui-dist": "3.19.0",
-    "travis-deploy-once": "^5.0.8"
+    "swagger-ui-dist": "3.19.3",
+    "travis-deploy-once": "^5.0.9"
   },
   "release": {
     "branch": "master"
