@@ -1,5 +1,5 @@
-import * as request from 'supertest';
-import * as readPkgUp from 'read-pkg-up';
+import request from 'supertest';
+import readPkgUp from 'read-pkg-up';
 import app from './example';
 
 describe('koa2-swagger-ui', () => {
