@@ -10,12 +10,12 @@
     "lint": "tslint -t stylish -p .",
     "lint:fix": "tslint -p tsconfig.json -t stylish --fix 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
+    "postbuild": "cp lib/index.hbs dist && cp lib/favicon-32x32.png dist && cp lib/favicon-16x16.png dist && cp package.json dist && cp LICENSE dist && cp README.md dist",
     "build": "microbundle build --compress false --format cjs --target node -o dist",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:prod": "npm run test -- --coverage --no-cache",
     "travis-deploy-once": "travis-deploy-once",
-    "presemantic-release": "cp lib/*.{hbs,png} dist && cp package.json dist && cp LICENSE dist && cp README.md dist",
     "semantic-release": "cd dist && semantic-release"
   },
   "dependencies": {
