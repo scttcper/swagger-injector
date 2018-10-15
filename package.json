@@ -6,7 +6,7 @@
   "main": "./koa2-swagger-ui.js",
   "typings": "./index.d.ts",
   "scripts": {
-    "start": "ts-node test/example.ts",
+    "start": "ts-node -O '{\"module\": \"commonjs\"}' test/example.ts",
     "lint": "tslint -t stylish -p .",
     "lint:fix": "tslint -p tsconfig.json -t stylish --fix 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
