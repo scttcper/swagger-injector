@@ -7,7 +7,7 @@
 [coverage-img]: https://codecov.io/gh/scttcper/koa2-swagger-ui/branch/master/graph/badge.svg
 [coverage-url]: https://codecov.io/gh/scttcper/koa2-swagger-ui
 
-Host swagger ui at a given directory from your koa v2 app.
+> Host swagger ui at a given directory from your koa v2 app
 
 Inspired by:
 
