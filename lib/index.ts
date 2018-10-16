@@ -44,7 +44,10 @@ const defaultOptions: KoaSwaggerUiOptions = {
 
 function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}) {
   if (!config.swaggerVersion) {
-    defaultOptions.swaggerVersion = readPkgUp.sync(__dirname).pkg.devDependencies['swagger-ui-dist'];
+    const pkg: any = readPkgUp.sync({
+      cwd: __dirname as string,
+    }).pkg;
+    defaultOptions.swaggerVersion = pkg.devDependencies['swagger-ui-dist'];
   }
   // Setup icons
   const extFavicon16 = config.favicon16;
