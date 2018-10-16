@@ -44,9 +44,7 @@ const defaultOptions: KoaSwaggerUiOptions = {
 
 function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}) {
   if (!config.swaggerVersion) {
-    const pkg: any = readPkgUp.sync({
-      cwd: __dirname as string,
-    }).pkg;
+    const pkg: any = readPkgUp.sync({ cwd: __dirname }).pkg;
     defaultOptions.swaggerVersion = pkg.devDependencies['swagger-ui-dist'];
   }
   // Setup icons
