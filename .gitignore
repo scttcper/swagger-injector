@@ -32,4 +32,4 @@ jspm_packages
 build
 docs
 dist
-.rpt2_cache
+.rts2_cache*
