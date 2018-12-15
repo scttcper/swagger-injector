@@ -1,13 +1,17 @@
-sudo: false
 language: node_js
 node_js: 10
 script:
   - npm run lint
   - npm run test:prod
   - npm run build
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      script:
+        - npm run semantic-release
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - npm run travis-deploy-once "npm run semantic-release"
   - npm run build:docs
 notifications:
   email: false
