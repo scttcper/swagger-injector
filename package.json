@@ -14,7 +14,7 @@
     "build": "microbundle build --target node --format=cjs -o dist",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:prod": "npm run test -- --coverage --no-cache",
+    "test:ci": "npm run test -- --coverage --no-cache",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "cd dist && semantic-release"
   },

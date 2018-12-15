@@ -1,17 +1,22 @@
 language: node_js
+
 node_js: 10
+
 script:
   - npm run lint
-  - npm run test:prod
+  - npm run test:ci
   - npm run build
-jobs:
-  include:
-    - stage: release
-      node_js: lts/*
-      script:
-        - npm run semantic-release
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
   - npm run build:docs
+
+jobs:
+  include:
+    - stage: release
+      script:
+        - npm run build
+        - npm run semantic-release
+
 notifications:
   email: false
