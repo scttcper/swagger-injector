@@ -3,7 +3,7 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "lib": ["es2017", "dom"],
-    "target": "es2015",
+    "target": "es2017",
     "module": "es2015",
     "esModuleInterop": true,
     "declaration": true,
