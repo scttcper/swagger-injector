@@ -1,8 +1,8 @@
-import * as fs from 'fs';
-import * as Handlebars from 'handlebars';
+import fs from 'fs';
+import Handlebars from 'handlebars';
 import { defaultsDeep } from 'lodash';
-import * as path from 'path';
-import * as readPkgUp from 'read-pkg-up';
+import path from 'path';
+import readPkgUp from 'read-pkg-up';
 
 export interface SwaggerOptions {
   dom_id: string;
