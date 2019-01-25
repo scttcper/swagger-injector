@@ -84,3 +84,4 @@ function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}) {
 }
 
 export default koaSwagger;
+module.exports = koaSwagger;
