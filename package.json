@@ -17,7 +17,7 @@
     "semantic-release": "cd dist && semantic-release"
   },
   "dependencies": {
-    "handlebars": "^4.0.12",
+    "handlebars": "^4.1.0",
     "lodash": "^4.17.11",
     "read-pkg-up": "^4.0.0"
   },
@@ -25,29 +25,28 @@
     "koa": "^2.5.3"
   },
   "devDependencies": {
-    "@types/handlebars": "4.0.40",
-    "@types/jest": "23.3.13",
+    "@types/jest": "24.0.4",
     "@types/koa": "2.0.48",
     "@types/koa-router": "7.0.39",
-    "@types/lodash": "4.14.120",
-    "@types/node": "10.12.18",
+    "@types/lodash": "4.14.121",
+    "@types/node": "11.9.4",
     "@types/read-pkg-up": "3.0.1",
     "@types/supertest": "2.0.7",
-    "inquirer": "6.2.1",
-    "jest": "23.6.0",
-    "koa": "2.6.2",
+    "inquirer": "6.2.2",
+    "jest": "24.1.0",
+    "koa": "2.7.0",
     "koa-router": "7.4.0",
     "microbundle": "0.9.0",
     "rimraf": "2.6.3",
     "semantic-release": "15.13.3",
     "supertest": "3.4.2",
-    "swagger-ui-dist": "3.20.5",
+    "swagger-ui-dist": "3.20.7",
     "ts-jest": "23.10.5",
-    "ts-node": "8.0.1",
+    "ts-node": "8.0.2",
     "tslint": "5.12.1",
-    "tslint-config-prettier": "1.17.0",
-    "tslint-xo": "0.12.0",
-    "typescript": "3.2.4"
+    "tslint-config-prettier": "1.18.0",
+    "tslint-xo": "0.14.0",
+    "typescript": "3.3.3"
   },
   "release": {
     "branch": "master"
