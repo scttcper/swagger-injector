@@ -6,8 +6,8 @@
   "typings": "./index.d.ts",
   "scripts": {
     "start": "ts-node test/example.ts",
-    "lint": "tslint -t stylish -p .",
-    "lint:fix": "tslint -p tsconfig.json -t stylish --fix 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "eslint lib/**/*.ts test/**/*.ts",
+    "lint:fix": "eslint --fix lib/**/*.ts test/**/*.ts",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json",
     "postbuild": "cp lib/index.hbs dist && cp lib/favicon-32x32.png dist && cp lib/favicon-16x16.png dist && cp package.json dist && cp LICENSE dist && cp README.md dist",

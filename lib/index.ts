@@ -6,6 +6,7 @@ import readPkgUp from 'read-pkg-up';
 import { Context } from 'koa';
 
 export interface SwaggerOptions {
+  // eslint-disable-next-line @typescript-eslint/camelcase
   dom_id: string;
   url: string;
   supportedSubmitMethods: string[];
@@ -32,6 +33,7 @@ const defaultOptions: KoaSwaggerUiOptions = {
   title: 'Swagger UI',
   oauthOptions: false,
   swaggerOptions: {
+    // eslint-disable-next-line @typescript-eslint/camelcase
     dom_id: '#swagger-ui',
     url: 'https://petstore.swagger.io/v2/swagger.json',
     layout: 'StandaloneLayout',
@@ -45,9 +47,10 @@ const defaultOptions: KoaSwaggerUiOptions = {
 
 function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}) {
   if (!config.swaggerVersion) {
-    const pkg: any = readPkgUp.sync({ cwd: __dirname }).pkg;
-    defaultOptions.swaggerVersion = pkg.devDependencies['swagger-ui-dist'];
+    const { pkg } = readPkgUp.sync({ cwd: __dirname });
+    defaultOptions.swaggerVersion = pkg.devDependencies!['swagger-ui-dist'];
   }
+
   // Setup icons
   const extFavicon16 = config.favicon16;
   const extFavicon32 = config.favicon32;
@@ -58,28 +61,31 @@ function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}) {
   const options = defaultsDeep(config, defaultOptions);
   Handlebars.registerHelper('json', context => JSON.stringify(context));
   Handlebars.registerHelper('strfnc', fnc => fnc);
-  Handlebars.registerHelper('isset', function(this: any, conditional, opt) {
+  Handlebars.registerHelper('isset', function (this: any, conditional, opt) {
     return conditional ? opt.fn(this) : opt.inverse(this);
   });
   const index = Handlebars.compile(fs.readFileSync(path.join(__dirname, './index.hbs'), 'utf-8'));
 
-  // tslint:disable-next-line:no-unused
+  // eslint-disable-next-line func-names, @typescript-eslint/ban-types
   return function koaSwaggerUi(ctx: Context, next: Function) {
     if (options.routePrefix === false || ctx.path === options.routePrefix) {
       ctx.type = 'text/html';
       ctx.body = index(options);
       return true;
     }
+
     if (!extFavicon16 && ctx.path === defaultOptions.favicon16) {
       ctx.type = 'image/png';
       ctx.body = fs.createReadStream(favicon16Path);
       return true;
     }
+
     if (!extFavicon32 && ctx.path === defaultOptions.favicon32) {
       ctx.type = 'image/png';
       ctx.body = fs.createReadStream(favicon32Path);
       return true;
     }
+
     return next();
   };
 }
