@@ -3,17 +3,14 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "lib": ["es2017", "dom"],
+    "esModuleInterop": true,
     "target": "es2015",
     "module": "commonjs",
-    "esModuleInterop": true,
-    "declaration": true,
     "strict": true,
-    "noImplicitAny": false,
-    "noUnusedLocals": true,
+    "declaration": true,
     "sourceMap": true,
+    "inlineSources": true,
     "outDir": "dist"
   },
-  "include": [
-    "lib/index.ts"
-  ]
+  "include": ["lib/index.ts"]
 }

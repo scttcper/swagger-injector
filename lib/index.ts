@@ -3,6 +3,7 @@ import Handlebars from 'handlebars';
 import { defaultsDeep } from 'lodash';
 import path from 'path';
 import readPkgUp from 'read-pkg-up';
+import { Context } from 'koa';
 
 export interface SwaggerOptions {
   dom_id: string;
@@ -63,7 +64,7 @@ function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}) {
   const index = Handlebars.compile(fs.readFileSync(path.join(__dirname, './index.hbs'), 'utf-8'));
 
   // tslint:disable-next-line:no-unused
-  return function koaSwaggerUi(ctx, next) {
+  return function koaSwaggerUi(ctx: Context, next: Function) {
     if (options.routePrefix === false || ctx.path === options.routePrefix) {
       ctx.type = 'text/html';
       ctx.body = index(options);
