@@ -20,7 +20,7 @@
     "@types/koa": "^2.0.48",
     "handlebars": "^4.1.1",
     "lodash": "^4.17.11",
-    "read-pkg-up": "^4.0.0"
+    "read-pkg-up": "^5.0.0"
   },
   "peerDependencies": {
     "koa": "^2.7.0"
@@ -29,27 +29,27 @@
     "@types/jest": "24.0.11",
     "@types/koa-router": "7.0.40",
     "@types/lodash": "4.14.123",
-    "@types/node": "11.11.4",
+    "@types/node": "11.13.0",
     "@types/read-pkg-up": "3.0.1",
     "@types/supertest": "2.0.7",
-    "@typescript-eslint/eslint-plugin": "1.4.2",
-    "@typescript-eslint/parser": "1.4.2",
-    "eslint": "5.15.3",
+    "@typescript-eslint/eslint-plugin": "1.6.0",
+    "@typescript-eslint/parser": "1.6.0",
+    "eslint": "5.16.0",
     "eslint-config-prettier": "4.1.0",
     "eslint-config-xo-space": "0.21.0",
-    "eslint-config-xo-typescript": "0.8.0",
+    "eslint-config-xo-typescript": "0.9.0",
     "eslint-plugin-import": "2.16.0",
-    "jest": "24.5.0",
+    "jest": "24.7.0",
     "koa": "2.7.0",
     "koa-router": "7.4.0",
     "microbundle": "0.11.0",
     "rimraf": "2.6.3",
     "semantic-release": "15.13.3",
     "supertest": "4.0.2",
-    "swagger-ui-dist": "3.21.0",
-    "ts-jest": "24.0.0",
+    "swagger-ui-dist": "3.22.0",
+    "ts-jest": "24.0.1",
     "ts-node": "8.0.3",
-    "typescript": "3.3.4000"
+    "typescript": "3.4.1"
   },
   "release": {
     "branch": "master"
