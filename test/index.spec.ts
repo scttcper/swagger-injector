@@ -16,8 +16,8 @@ describe('koa2-swagger-ui', () => {
       .expect(200);
   });
   it('should return css', () => {
-    const { pkg } = readPkgUp.sync({ cwd: __dirname });
-    const version = pkg.devDependencies!['swagger-ui-dist'];
+    const result = readPkgUp.sync({ cwd: __dirname });
+    const version = result!.package.devDependencies!['swagger-ui-dist'];
     const url = `https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/${version}`;
     return request(url)
       .get('/swagger-ui.css')
