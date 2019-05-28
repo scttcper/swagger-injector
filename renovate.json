@@ -1,9 +1,12 @@
 {
   "extends": [
-    "config:base"
+    "config:js-lib",
+    "schedule:monthly"
   ],
+  "automerge": "minor",
   "forkMode": true,
   "prHourlyLimit": 4,
   "rebaseStalePrs": true,
-  "semanticCommits": true
+  "semanticCommits": true,
+  "pinVersions": false
 }

@@ -33,3 +33,4 @@ build
 docs
 dist
 .rts2_cache*
+yarn.lock
