@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/promise-function-async */
 import request from 'supertest';
 import readPkgUp from 'read-pkg-up';
 import app from './example';
