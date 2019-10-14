@@ -9,8 +9,8 @@
   ],
   "scripts": {
     "start": "ts-node test/example.ts",
-    "lint": "eslint lib/**/*.ts test/**/*.ts",
-    "lint:fix": "eslint --fix lib/**/*.ts test/**/*.ts",
+    "lint": "eslint --ext .ts,.js .",
+    "lint:fix": "eslint --ext .ts,.js --fix .",
     "prepare": "npm run build",
     "build": "del dist && tsc -p tsconfig.build.json",
     "postbuild": "cp lib/index.hbs dist && cp lib/favicon-32x32.png dist && cp lib/favicon-16x16.png dist",

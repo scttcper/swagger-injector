@@ -16,7 +16,7 @@ app
   .use(router.allowedMethods());
 
 // istanbul ignore next
-if (!module.parent) {
+if (module.parent === null) {
   app.listen(3000);
   console.log('listening on: http://localhost:3000/docs');
 }
