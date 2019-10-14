@@ -47,13 +47,13 @@ const defaultOptions: KoaSwaggerUiOptions = {
 };
 
 function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}) {
-  if (!config.swaggerVersion) {
+  if (config.swaggerVersion === undefined) {
     const pkg = readPkgUp.sync({ cwd: __dirname });
-    if (!pkg) {
+    if (pkg === undefined) {
       throw new Error('Package not found');
     }
 
-    defaultOptions.swaggerVersion = pkg.package.devDependencies!['swagger-ui-dist'];
+    defaultOptions.swaggerVersion = pkg.packageJson.devDependencies!['swagger-ui-dist'];
   }
 
   // Setup icons
@@ -66,7 +66,8 @@ function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}) {
   const options = defaultsDeep(config, defaultOptions);
   Handlebars.registerHelper('json', context => JSON.stringify(context));
   Handlebars.registerHelper('strfnc', fnc => fnc);
-  Handlebars.registerHelper('isset', function (this: any, conditional, opt) {
+  Handlebars.registerHelper('isset', function (this: any, conditional: any, opt) {
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     return conditional ? opt.fn(this) : opt.inverse(this);
   });
   const index = Handlebars.compile(fs.readFileSync(path.join(__dirname, './index.hbs'), 'utf-8'));
@@ -79,13 +80,13 @@ function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}) {
       return true;
     }
 
-    if (!extFavicon16 && ctx.path === defaultOptions.favicon16) {
+    if (extFavicon16 === undefined && ctx.path === defaultOptions.favicon16) {
       ctx.type = 'image/png';
       ctx.body = fs.createReadStream(favicon16Path);
       return true;
     }
 
-    if (!extFavicon32 && ctx.path === defaultOptions.favicon32) {
+    if (extFavicon32 === undefined && ctx.path === defaultOptions.favicon32) {
       ctx.type = 'image/png';
       ctx.body = fs.createReadStream(favicon32Path);
       return true;
