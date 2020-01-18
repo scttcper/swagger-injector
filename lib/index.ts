@@ -3,9 +3,10 @@ import Handlebars from 'handlebars';
 import { defaultsDeep } from 'lodash';
 import path from 'path';
 import readPkgUp from 'read-pkg-up';
-import { Context } from 'koa';
+import { Context, Middleware } from 'koa';
 
 export interface SwaggerOptions {
+  [key: string]: string | boolean | string[] | object;
   // eslint-disable-next-line @typescript-eslint/camelcase
   dom_id: string;
   url: string;
@@ -16,7 +17,6 @@ export interface SwaggerOptions {
   showRequestHeaders: boolean;
   layout: string;
   spec: object;
-  [key: string]: string | boolean | string[] | object;
 }
 
 export interface KoaSwaggerUiOptions {
@@ -46,7 +46,7 @@ const defaultOptions: KoaSwaggerUiOptions = {
   favicon32: '/favicon-32x32.png',
 };
 
-function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}) {
+function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}): Middleware {
   if (config.swaggerVersion === undefined) {
     const pkg = readPkgUp.sync({ cwd: __dirname });
     if (pkg === undefined) {
@@ -67,13 +67,12 @@ function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}) {
   Handlebars.registerHelper('json', context => JSON.stringify(context));
   Handlebars.registerHelper('strfnc', fnc => fnc);
   Handlebars.registerHelper('isset', function (this: any, conditional: any, opt) {
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     return conditional ? opt.fn(this) : opt.inverse(this);
   });
   const index = Handlebars.compile(fs.readFileSync(path.join(__dirname, './index.hbs'), 'utf-8'));
 
-  // eslint-disable-next-line func-names, @typescript-eslint/ban-types
-  return function koaSwaggerUi(ctx: Context, next: Function) {
+  // eslint-disable-next-line func-names
+  return function koaSwaggerUi(ctx: Context, next: any) {
     if (options.routePrefix === false || ctx.path === options.routePrefix) {
       ctx.type = 'text/html';
       ctx.body = index(options);
