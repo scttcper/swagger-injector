@@ -4,9 +4,6 @@
     "schedule:monthly"
   ],
   "automerge": "minor",
-  "forkMode": true,
-  "prHourlyLimit": 4,
-  "rebaseStalePrs": true,
   "semanticCommits": true,
   "pinVersions": false
 }

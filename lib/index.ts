@@ -7,7 +7,6 @@ import { Context, Middleware } from 'koa';
 
 export interface SwaggerOptions {
   [key: string]: string | boolean | string[] | object;
-  // eslint-disable-next-line @typescript-eslint/camelcase
   dom_id: string;
   url: string;
   supportedSubmitMethods: string[];
@@ -34,7 +33,6 @@ const defaultOptions: KoaSwaggerUiOptions = {
   title: 'Swagger UI',
   oauthOptions: false,
   swaggerOptions: {
-    // eslint-disable-next-line @typescript-eslint/camelcase
     dom_id: '#swagger-ui',
     url: 'https://petstore.swagger.io/v2/swagger.json',
     layout: 'StandaloneLayout',
