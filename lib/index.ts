@@ -6,7 +6,7 @@ import { sync as readPkgUpSync } from 'read-pkg-up';
 import { Context, Middleware, Next } from 'koa';
 
 export interface SwaggerOptions {
-  [key: string]: string | boolean | string[] | object;
+  [key: string]: string | boolean | string[] | Record<string, unknown>;
   dom_id: string;
   url: string;
   supportedSubmitMethods: string[];
@@ -15,7 +15,7 @@ export interface SwaggerOptions {
   defaultModelRendering: string;
   showRequestHeaders: boolean;
   layout: string;
-  spec: object;
+  spec: Record<string, unknown>;
 }
 
 export interface KoaSwaggerUiOptions {
