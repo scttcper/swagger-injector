@@ -13,7 +13,7 @@
     "lint:fix": "eslint --ext .ts,.js --fix .",
     "prepare": "npm run build",
     "build": "del-cli dist && tsc -p tsconfig.build.json",
-    "postbuild": "cp lib/index.hbs dist && cp lib/favicon-32x32.png dist && cp lib/favicon-16x16.png dist",
+    "postbuild": "cp lib/index.hbs dist && cp lib/favicon.png dist",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --ci --coverage --no-cache"

@@ -27,8 +27,7 @@ export interface KoaSwaggerUiOptions {
   specPrefix: string;
   exposeSpec: boolean;
   hideTopbar: boolean;
-  favicon16: string;
-  favicon32: string;
+  favicon: string;
 }
 
 const defaultOptions: KoaSwaggerUiOptions = {
@@ -44,8 +43,7 @@ const defaultOptions: KoaSwaggerUiOptions = {
   swaggerVersion: '',
   exposeSpec: false,
   hideTopbar: false,
-  favicon16: '/favicon-16x16.png',
-  favicon32: '/favicon-32x32.png',
+  favicon: '/favicon.png',
 };
 
 function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}): Middleware {
@@ -59,10 +57,8 @@ function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}): Middleware {
   }
 
   // Setup icons
-  const extFavicon16 = config.favicon16;
-  const extFavicon32 = config.favicon32;
-  const favicon16Path = join(__dirname, defaultOptions.favicon16);
-  const favicon32Path = join(__dirname, defaultOptions.favicon32);
+  const extFavicon = config.favicon;
+  const faviconPath = join(__dirname, defaultOptions.favicon);
 
   // Setup default options
   const options: KoaSwaggerUiOptions = defaultsDeep(config, defaultOptions);
@@ -86,15 +82,9 @@ function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}): Middleware {
       return true;
     }
 
-    if (extFavicon16 === undefined && ctx.path === defaultOptions.favicon16) {
+    if (extFavicon === undefined && ctx.path === defaultOptions.favicon) {
       ctx.type = 'image/png';
-      ctx.body = createReadStream(favicon16Path);
-      return true;
-    }
-
-    if (extFavicon32 === undefined && ctx.path === defaultOptions.favicon32) {
-      ctx.type = 'image/png';
-      ctx.body = createReadStream(favicon32Path);
+      ctx.body = createReadStream(faviconPath);
       return true;
     }
 
