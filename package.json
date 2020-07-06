@@ -12,12 +12,11 @@
     "lint": "eslint --ext .ts,.js .",
     "lint:fix": "eslint --ext .ts,.js --fix .",
     "prepare": "npm run build",
-    "build": "del dist && tsc -p tsconfig.build.json",
+    "build": "del-cli dist && tsc -p tsconfig.build.json",
     "postbuild": "cp lib/index.hbs dist && cp lib/favicon-32x32.png dist && cp lib/favicon-16x16.png dist",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:ci": "jest --ci --coverage --no-cache",
-    "semantic-release": "semantic-release"
+    "test:ci": "jest --ci --coverage --no-cache"
   },
   "dependencies": {
     "@types/koa": "^2.11.3",
@@ -26,30 +25,24 @@
     "read-pkg-up": "^7.0.1"
   },
   "peerDependencies": {
-    "koa": ">=2.12.0"
+    "koa": ">=2.13.0"
   },
   "devDependencies": {
-    "@types/jest": "25.2.3",
+    "@ctrl/eslint-config": "1.0.2",
+    "@jest/globals": "26.1.0",
     "@types/koa-router": "7.4.1",
     "@types/lodash": "4.14.157",
     "@types/node": "14.0.14",
     "@types/supertest": "2.0.10",
-    "@typescript-eslint/eslint-plugin": "3.1.0",
-    "@typescript-eslint/parser": "3.1.0",
     "del-cli": "3.0.1",
-    "eslint": "7.3.1",
-    "eslint-config-xo-space": "0.25.0",
-    "eslint-config-xo-typescript": "0.31.0",
-    "eslint-plugin-import": "2.20.2",
-    "jest": "26.0.1",
+    "jest": "26.1.0",
     "koa": "2.11.0",
-    "koa-router": "9.0.1",
-    "semantic-release": "17.0.8",
+    "koa-router": "9.1.0",
     "supertest": "4.0.2",
-    "swagger-ui-dist": "3.25.5",
-    "ts-jest": "26.1.0",
+    "swagger-ui-dist": "3.28.0",
+    "ts-jest": "26.1.1",
     "ts-node": "8.10.2",
-    "typescript": "3.9.3"
+    "typescript": "3.9.6"
   },
   "release": {
     "branch": "master"

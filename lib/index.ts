@@ -24,8 +24,8 @@ export interface KoaSwaggerUiOptions {
   swaggerOptions: Partial<SwaggerOptions>;
   swaggerVersion: string;
   routePrefix: string | false;
-  specPrefix: string,
-  exposeSpec: boolean,
+  specPrefix: string;
+  exposeSpec: boolean;
   hideTopbar: boolean;
   favicon16: string;
   favicon32: string;

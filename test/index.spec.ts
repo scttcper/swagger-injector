@@ -1,19 +1,15 @@
+import { describe, it } from '@jest/globals';
 import request from 'supertest';
 import readPkgUp from 'read-pkg-up';
+
 import app from './example';
 
 describe('koa2-swagger-ui', () => {
   it('should return index file', async () => {
-    await request(app.callback())
-      .get('/docs')
-      .expect('Content-Type', /html/)
-      .expect(200);
+    await request(app.callback()).get('/docs').expect('Content-Type', /html/).expect(200);
   });
   it('should return index file from koa router', async () => {
-    await request(app.callback())
-      .get('/moredocs')
-      .expect('Content-Type', /html/)
-      .expect(200);
+    await request(app.callback()).get('/moredocs').expect('Content-Type', /html/).expect(200);
   });
   it('should return css', async () => {
     const result = readPkgUp.sync({ cwd: __dirname });
@@ -25,10 +21,7 @@ describe('koa2-swagger-ui', () => {
       .expect(200);
   });
   it('should return spec', async () => {
-    await request(app.callback())
-      .get('/docs/spec')
-      .expect('Content-Type', /json/)
-      .expect(200);
+    await request(app.callback()).get('/docs/spec').expect('Content-Type', /json/).expect(200);
   });
   it('should return icon16x16', async () => {
     await request(app.callback())
