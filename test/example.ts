@@ -8,7 +8,10 @@ const router = new KoaRouter();
 
 app.use(koaSwagger({
   exposeSpec: true,
-  swaggerOptions: { spec: {} },
+  swaggerOptions: {
+    spec: {},
+    validatorUrl: null,
+  },
 }));
 
 export default app;

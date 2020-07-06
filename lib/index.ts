@@ -6,22 +6,23 @@ import { sync as readPkgUpSync } from 'read-pkg-up';
 import { Context, Middleware, Next } from 'koa';
 
 export interface SwaggerOptions {
-  [key: string]: string | boolean | string[] | Record<string, unknown>;
-  dom_id: string;
-  url: string;
-  supportedSubmitMethods: string[];
-  docExpansion: string;
-  jsonEditor: boolean;
-  defaultModelRendering: string;
-  showRequestHeaders: boolean;
-  layout: string;
-  spec: Record<string, unknown>;
+  [key: string]: string | boolean | string[] | Record<string, unknown> | null | undefined;
+  dom_id?: string;
+  url?: string;
+  supportedSubmitMethods?: string[];
+  docExpansion?: string;
+  jsonEditor?: boolean;
+  defaultModelRendering?: string;
+  showRequestHeaders?: boolean;
+  layout?: string;
+  spec?: Record<string, unknown>;
+  validatorUrl?: string | null;
 }
 
 export interface KoaSwaggerUiOptions {
   title: string;
   oauthOptions: boolean | any;
-  swaggerOptions: Partial<SwaggerOptions>;
+  swaggerOptions: SwaggerOptions;
   swaggerVersion: string;
   routePrefix: string | false;
   specPrefix: string;

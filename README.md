@@ -37,6 +37,7 @@ swaggerOptions: { // passed to SwaggerUi()
   defaultModelRendering: 'schema',
   showRequestHeaders: false,
   swaggerVersion: 'x.x.x' // read from package.json,
+  validatorUrl: null, // disable swagger-ui validator
 },
 routePrefix: '/docs', // route where the view is returned
 specPrefix: '/docs/spec', // route where the spec is returned
