@@ -11,8 +11,8 @@
 
 Inspired by:
 
-* [swagger-injector](https://github.com/johnhof/swagger-injector) for serving on a specific route
-* [hapi-swaggered-ui](https://github.com/z0mt3c/hapi-swaggered-ui) for serving files from node_modules using a handlebars driven index.html
+- [swagger-injector](https://github.com/johnhof/swagger-injector) for serving on a specific route
+- [hapi-swaggered-ui](https://github.com/z0mt3c/hapi-swaggered-ui) for serving files from node_modules using a handlebars driven index.html
 
 ## install
 
@@ -67,10 +67,13 @@ app.listen(3000);
 ```
 
 ## example with koa-router and yaml source
+
 depends on yamljs to turn your Yaml into a JS object
+
 ```
 npm install --save yamljs
 ```
+
 ```javascript
 const Koa = require('koa');
 const Router = require('koa-router');
@@ -85,7 +88,10 @@ const router = new Router();
 // .load loads file from root.
 const spec = yaml2js.load('./openapi.yaml');
 
-router.use(koaSwagger());
+// example 1 using router.use()
+router.use(koaSwagger({ swaggerOptions: { spec } }));
+
+// example 2 using more explicit .get()
 router.get('/docs', koaSwagger({ routePrefix: false, swaggerOptions: { spec } }));
 
 app.use(router.routes());
