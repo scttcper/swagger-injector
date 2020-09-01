@@ -1,7 +1,7 @@
-import Koa from 'koa';
-import KoaRouter from 'koa-router';
+import * as Koa from 'koa';
+import * as KoaRouter from 'koa-router';
 
-import koaSwagger from '../lib';
+import { koaSwagger } from '../lib';
 
 const app = new Koa();
 const router = new KoaRouter();

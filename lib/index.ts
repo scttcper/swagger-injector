@@ -1,9 +1,10 @@
 import { readFileSync, createReadStream } from 'fs';
-import Handlebars, { HelperDelegate, HelperOptions } from 'handlebars';
+import * as Handlebars from 'handlebars';
+import type { HelperDelegate, HelperOptions } from 'handlebars';
 import { defaultsDeep } from 'lodash';
 import { join } from 'path';
 import { sync as readPkgUpSync } from 'read-pkg-up';
-import { Context, Middleware, Next } from 'koa';
+import type { Context, Middleware, Next } from 'koa';
 
 export interface SwaggerOptions {
   [key: string]: string | boolean | string[] | Record<string, unknown> | null | undefined;
@@ -47,7 +48,7 @@ const defaultOptions: KoaSwaggerUiOptions = {
   favicon: '/favicon.png',
 };
 
-function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}): Middleware {
+export function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}): Middleware {
   if (config.swaggerVersion === undefined) {
     const pkg = readPkgUpSync({ cwd: __dirname });
     if (pkg === undefined) {
@@ -92,6 +93,3 @@ function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}): Middleware {
     return next();
   };
 }
-
-export default koaSwagger;
-module.exports = koaSwagger;

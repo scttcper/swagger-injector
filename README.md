@@ -49,8 +49,8 @@ favicon: '/favicon.png', // default favicon
 ## example
 
 ```javascript
-const Koa = require('koa');
-const koaSwagger = require('koa2-swagger-ui');
+import Koa from 'koa';
+import { koaSwagger } from 'koa2-swagger-ui';
 
 const app = new Koa();
 

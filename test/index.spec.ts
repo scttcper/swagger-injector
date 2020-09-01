@@ -1,6 +1,6 @@
 import { describe, it } from '@jest/globals';
-import request from 'supertest';
-import readPkgUp from 'read-pkg-up';
+import * as request from 'supertest';
+import * as readPkgUp from 'read-pkg-up';
 
 import app from './example';
 
@@ -17,7 +17,7 @@ describe('koa2-swagger-ui', () => {
     const url = `https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/${version}`;
     await request(url)
       .get('/swagger-ui.min.css')
-      .expect('Content-Type', 'text/css')
+      .expect('Content-Type', 'text/css; charset=utf-8')
       .expect(200);
   });
   it('should return spec', async () => {

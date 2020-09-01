@@ -2,8 +2,8 @@
   "name": "koa2-swagger-ui",
   "version": "0.0.0-placeholder",
   "description": "Swagger UI middleware for koa",
-  "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -19,30 +19,27 @@
     "test:ci": "jest --ci --coverage --no-cache"
   },
   "dependencies": {
-    "@types/koa": "^2.11.3",
+    "@types/koa": "^2.11.4",
     "handlebars": "^4.7.6",
-    "lodash": "^4.17.15",
+    "lodash.defaultsdeep": "^4.6.1",
     "read-pkg-up": "^7.0.1"
   },
-  "peerDependencies": {
-    "koa": ">=2.13.0"
-  },
   "devDependencies": {
-    "@ctrl/eslint-config": "1.0.4",
-    "@jest/globals": "26.1.0",
+    "@ctrl/eslint-config": "1.1.0",
+    "@jest/globals": "26.4.2",
     "@types/koa-router": "7.4.1",
-    "@types/lodash": "4.14.158",
-    "@types/node": "14.0.27",
+    "@types/lodash.defaultsdeep": "4.6.6",
+    "@types/node": "14.6.2",
     "@types/supertest": "2.0.10",
     "del-cli": "3.0.1",
-    "jest": "26.1.0",
+    "jest": "26.4.2",
     "koa": "2.13.0",
-    "koa-router": "9.1.0",
+    "koa-router": "9.4.0",
     "supertest": "4.0.2",
-    "swagger-ui-dist": "3.31.1",
-    "ts-jest": "26.1.2",
-    "ts-node": "8.10.2",
-    "typescript": "3.9.6"
+    "swagger-ui-dist": "3.32.5",
+    "ts-jest": "26.3.0",
+    "ts-node": "9.0.0",
+    "typescript": "4.0.2"
   },
   "release": {
     "branch": "master"
