@@ -7,7 +7,13 @@ import { sync as readPkgUpSync } from 'read-pkg-up';
 import type { Context, Middleware, Next } from 'koa';
 
 export interface SwaggerOptions {
-  [key: string]: string | boolean | string[] | Record<string, unknown> | null | undefined;
+  [key: string]:
+    | string
+    | boolean
+    | string[]
+    | Record<string, unknown>
+    | null
+    | undefined;
   dom_id?: string;
   url?: string;
   supportedSubmitMethods?: string[];
@@ -48,14 +54,18 @@ const defaultOptions: KoaSwaggerUiOptions = {
   favicon: '/favicon.png',
 };
 
-export function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}): Middleware {
+export function koaSwagger(
+  config: Partial<KoaSwaggerUiOptions> = {},
+): Middleware {
   if (config.swaggerVersion === undefined) {
     const pkg = readPkgUpSync({ cwd: __dirname });
     if (pkg === undefined) {
       throw new Error('Package not found');
     }
 
-    defaultOptions.swaggerVersion = pkg.packageJson.devDependencies!['swagger-ui-dist'];
+    defaultOptions.swaggerVersion = pkg.packageJson.devDependencies![
+      'swagger-ui-dist'
+    ];
   }
 
   // Setup icons
@@ -64,12 +74,18 @@ export function koaSwagger(config: Partial<KoaSwaggerUiOptions> = {}): Middlewar
 
   // Setup default options
   const options: KoaSwaggerUiOptions = defaultsDeep(config, defaultOptions);
-  Handlebars.registerHelper('json', context => JSON.stringify(context));
+  Handlebars.registerHelper('json', (context) => JSON.stringify(context));
   Handlebars.registerHelper('strfnc', (fnc: HelperDelegate) => fnc);
-  Handlebars.registerHelper('isset', function (this: any, conditional: any, opt: HelperOptions) {
+  Handlebars.registerHelper('isset', function (
+    this: any,
+    conditional: any,
+    opt: HelperOptions,
+  ) {
     return conditional ? opt.fn(this) : opt.inverse(this);
   });
-  const index = Handlebars.compile(readFileSync(join(__dirname, './index.hbs'), 'utf-8'));
+  const index = Handlebars.compile(
+    readFileSync(join(__dirname, './index.hbs'), 'utf-8'),
+  );
 
   // eslint-disable-next-line func-names
   return function koaSwaggerUi(ctx: Context, next: Next) {
