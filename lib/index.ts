@@ -76,13 +76,12 @@ export function koaSwagger(
   const options: KoaSwaggerUiOptions = defaultsDeep(config, defaultOptions);
   Handlebars.registerHelper('json', (context) => JSON.stringify(context));
   Handlebars.registerHelper('strfnc', (fnc: HelperDelegate) => fnc);
-  Handlebars.registerHelper('isset', function (
-    this: any,
-    conditional: any,
-    opt: HelperOptions,
-  ) {
-    return conditional ? opt.fn(this) : opt.inverse(this);
-  });
+  Handlebars.registerHelper(
+    'isset',
+    function (this: any, conditional: any, opt: HelperOptions) {
+      return conditional ? opt.fn(this) : opt.inverse(this);
+    },
+  );
   const index = Handlebars.compile(
     readFileSync(join(__dirname, './index.hbs'), 'utf-8'),
   );
